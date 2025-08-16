@@ -6,10 +6,10 @@
 <title>Dubai Real Estate</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-*{margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif;}
-body{background:#0e0e0e; color:#fff; transition:0.3s; direction:ltr;}
-a{text-decoration:none; color:inherit;}
-img{max-width:100%; display:block;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#0e0e0e;color:#fff;transition:0.3s;direction:ltr;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
 
 /* Header */
 header{
@@ -19,9 +19,10 @@ header{
   backdrop-filter: blur(5px);
   position: sticky; top:0; z-index:10;
 }
-.logo{font-size:1.8rem; font-weight:700; color:#ffd966;}
-nav a{margin-left:25px; font-weight:500; color:#fff; transition:0.3s;}
+.logo{font-size:1.8rem;font-weight:700;color:#ffd966;}
+nav a{margin-left:25px;font-weight:500;color:#fff;transition:0.3s;}
 nav a:hover{color:#ffd966;}
+.lang-switch{display:flex;align-items:center;}
 .lang-switch button{
   background: linear-gradient(45deg,#ffb400,#e0a000);
   color:#000;
@@ -36,7 +37,7 @@ nav a:hover{color:#ffd966;}
 
 /* Hero Section */
 .hero{
-  height:80vh;
+  height:70vh;
   background:url('https://images.unsplash.com/photo-1571066819554-d4a03a1b67b7?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
   position: relative;
   display:flex; align-items:center; justify-content:center; text-align:center;
@@ -46,9 +47,9 @@ nav a:hover{color:#ffd966;}
   position:absolute; top:0; left:0; width:100%; height:100%;
   background: rgba(0,0,0,0.6);
 }
-.hero div{position: relative; z-index:2; max-width:900px;}
-.hero h1{font-size:3.5rem; color:#ffd966; text-shadow:2px 2px 10px #000;}
-.hero p{font-size:1.3rem; color:#ddd; margin-top:10px;}
+.hero div{position: relative; z-index:2; max-width:800px;}
+.hero h1{font-size:2.5rem; color:#ffd966; text-shadow:2px 2px 10px #000;}
+.hero p{font-size:1.2rem; color:#ddd; margin-top:10px;}
 .view-all{
   padding:12px 30px;
   background: linear-gradient(45deg,#ffb400,#e0a000);
@@ -62,11 +63,11 @@ nav a:hover{color:#ffd966;}
 
 /* Sections */
 .section{padding:60px 50px;}
-.section h2{font-size:2rem; margin-bottom:40px; color:#ffd966;}
+.section h2{font-size:2rem;margin-bottom:40px;color:#ffd966;}
 
 /* Property Cards */
 .properties{
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px;
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px;
 }
 .property-card{
   background: rgba(255,255,255,0.05);
@@ -81,11 +82,11 @@ nav a:hover{color:#ffd966;}
   transform:scale(1.03);
   box-shadow:0 12px 30px rgba(255,180,0,0.6);
 }
-.property-card img{height:200px; object-fit:cover;}
+.property-card img{height:180px; object-fit:cover;}
 .property-info{padding:15px;}
-.property-info h3{font-size:1.2rem; margin-bottom:10px; color:#ffd966;}
-.property-info p{color:#ccc; margin-bottom:10px;}
-.property-info .price{font-size:1.2rem; font-weight:bold; color:#ffd966;}
+.property-info h3{font-size:1.1rem;margin-bottom:8px;color:#ffd966;}
+.property-info p{color:#ccc;margin-bottom:6px;}
+.property-info .price{font-size:1.1rem;font-weight:bold;color:#ffd966;}
 
 /* Locations Section */
 .locations{
@@ -101,7 +102,7 @@ nav a:hover{color:#ffd966;}
   background:#ffd966; border-radius:4px;
 }
 .location-card{
-  min-width:250px;
+  min-width:220px;
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(10px);
   border-radius:15px;
@@ -111,11 +112,11 @@ nav a:hover{color:#ffd966;}
   transition:0.3s;
 }
 .location-card:hover{transform:scale(1.05);}
-.location-card img{height:150px; object-fit:cover;}
-.location-card p{text-align:center; padding:10px; font-weight:600; color:#ffd966;}
+.location-card img{height:140px; object-fit:cover;}
+.location-card p{text-align:center;padding:10px;font-weight:600;color:#ffd966;}
 
 /* Footer */
-footer{background:#121212; text-align:center; padding:20px; color:#aaa; margin-top:50px;}
+footer{background:#121212;text-align:center;padding:20px;color:#aaa;margin-top:50px;}
 </style>
 </head>
 <body>
@@ -176,7 +177,7 @@ footer{background:#121212; text-align:center; padding:20px; color:#aaa; margin-t
   </div>
 </section>
 
-<!-- Dubai Locations Section -->
+<!-- Dubai Locations -->
 <section class="section">
   <h2 id="locations-title">Explore Dubai Locations</h2>
   <div class="locations">
@@ -216,12 +217,4 @@ const translations={
     prop2Title:"Modern Apartment Downtown",
     prop2Desc:"2 Beds • 2 Baths • 1200 sq ft",
     prop3Title:"Premium Office Space Dubai Marina",
-    prop3Desc:"Open Space • 3 Bathrooms • 2000 sq ft",
-    locationsTitle:"Explore Dubai Locations",
-    loc1:"Palm Jumeirah",
-    loc2:"Downtown Dubai",
-    loc3:"Dubai Marina",
-    loc4:"Jumeirah Beach"
-  },
-  ar:{
-    heroTitle:"ابوظہبی میں اپنے خوابوں کی جائیداد
+    prop3Desc:"Open
