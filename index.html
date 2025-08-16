@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dubai Properties</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box; font-family: 'Roboto', sans-serif;}
+    body {background-color:#121212; color:#fff; direction:ltr;}
+    a {text-decoration:none; color:inherit;}
+    img {max-width:100%; display:block;}
+
+    header {padding:20px 50px; display:flex; justify-content:space-between; align-items:center; background:#1f1f1f;}
+    .logo {font-size:1.8rem; font-weight:bold; color:#ffb400;}
+    nav a {margin-left:25px; font-weight:500; transition:0.3s;}
+    nav a:hover {color:#ffb400;}
+
+    /* Language Switcher */
+    .lang-switch {margin-left:25px;}
+    .lang-switch button {margin-left:5px; padding:5px 12px; border:none; border-radius:5px; background:#ffb400; color:#000; font-weight:bold; cursor:pointer; transition:0.3s;}
+    .lang-switch button:hover {background:#e0a000;}
+
+    .hero {height:70vh; background:url('https://source.unsplash.com/1600x900/?dubai,realestate') center/cover no-repeat; display:flex; align-items:center; justify-content:center; text-align:center;}
+    .hero h1 {font-size:3rem; color:#fff; text-shadow: 2px 2px 8px #000;}
+    .hero p {font-size:1.2rem; margin-top:10px; color:#ddd;}
+
+    .section {padding:60px 50px;}
+    .section h2 {font-size:2rem; margin-bottom:40px; color:#ffb400;}
+    .properties {display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px;}
+    .property-card {background:#1f1f1f; border-radius:12px; overflow:hidden; transition:0.3s; cursor:pointer;}
+    .property-card:hover {transform:translateY(-5px);}
+    .property-card img {height:200px; object-fit:cover;}
+    .property-info {padding:15px;}
+    .property-info h3 {font-size:1.2rem; margin-bottom:10px; color:#fff;}
+    .property-info p {color:#ccc; margin-bottom:10px;}
+    .property-info .price {color:#ffb400; font-weight:bold; font-size:1.1rem;}
+    .view-all {display:inline-block; margin-top:20px; padding:10px 25px; background:#ffb400; color:#000; font-weight:bold; border-radius:5px; transition:0.3s;}
+    .view-all:hover {background:#e0a000;}
+
+    footer {background:#1f1f1f; text-align:center; padding:20px; color:#aaa; margin-top:50px;}
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">Dubai Properties</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Properties</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <span class="lang-switch">
+        <button onclick="setLang('en')">EN</button>
+        <button onclick="setLang('ar')">AR</button>
+        <button onclick="setLang('ur')">UR</button>
+      </span>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div>
+      <h1 id="hero-title">Find Your Dream Property in Dubai</h1>
+      <p id="hero-subtitle">Luxury Villas, Apartments & Offices – Explore the Best Listings</p>
+      <a href="#" class="view-all" id="view-all-btn">View All Properties</a>
+    </div>
+  </section>
+
+  <!-- Featured Properties -->
+  <section class="section">
+    <h2 id="featured-title">Featured Properties</h2>
+    <div class="properties">
+      <div class="property-card">
+        <img src="https://source.unsplash.com/400x300/?dubai,villa" alt="Property">
+        <div class="property-info">
+          <h3 id="prop1-title">Luxury Villa in Palm Jumeirah</h3>
+          <p id="prop1-desc">4 Beds • 5 Baths • 4500 sq ft</p>
+          <p class="price">AED 12,000,000</p>
+        </div>
+      </div>
+      <div class="property-card">
+        <img src="https://source.unsplash.com/400x300/?dubai,apartment" alt="Property">
+        <div class="property-info">
+          <h3 id="prop2-title">Modern Apartment Downtown</h3>
+          <p id="prop2-desc">2 Beds • 2 Baths • 1200 sq ft</p>
+          <p class="price">AED 3,500,000</p>
+        </div>
+      </div>
+      <div class="property-card">
+        <img src="https://source.unsplash.com/400x300/?dubai,office" alt="Property">
+        <div class="property-info">
+          <h3 id="prop3-title">Premium Office Space Dubai Marina</h3>
+          <p id="prop3-desc">Open Space • 3 Bathrooms • 2000 sq ft</p>
+          <p class="price">AED 8,000,000</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Dubai Properties. All rights reserved.
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        heroTitle: "Find Your Dream Property in Dubai",
+        heroSubtitle: "Luxury Villas, Apartments & Offices – Explore the Best Listings",
+        viewAll: "View All Properties",
+        featuredTitle: "Featured Properties",
+        prop1Title: "Luxury Villa in Palm Jumeirah",
+        prop1Desc: "4 Beds • 5 Baths • 4500 sq ft",
+        prop2Title: "Modern Apartment Downtown",
+        prop2Desc: "2 Beds • 2 Baths • 1200 sq ft",
+        prop3Title: "Premium Office Space Dubai Marina",
+        prop3Desc: "Open Space • 3 Bathrooms • 2000 sq ft"
+      },
+      ar: {
+        heroTitle: "ابوظہبی میں اپنے خوابوں کی جائیداد تلاش کریں",
+        heroSubtitle: "لگژری ولاز، اپارٹمنٹس اور دفاتر – بہترین فہرستیں دیکھیں",
+        viewAll: "تمام جائیدادیں دیکھیں",
+        featuredTitle: "نمایاں جائیدادیں",
+        prop1Title: "پام جمیرا میں لگژری ولا",
+        prop1Desc: "4 بیڈ • 5 باتھ • 4500 مربع فٹ",
+        prop2Title: "ڈاؤن ٹاؤن میں جدید اپارٹمنٹ",
+        prop2Desc: "2 بیڈ • 2 باتھ • 1200 مربع فٹ",
+        prop3Title: "دبئی مرینا میں پریمیم دفتر",
+        prop3Desc: "اوپن اسپیس • 3 باتھ رومز • 2000 مربع فٹ"
+      },
+      ur: {
+        heroTitle: "دبئی میں اپنے خوابوں کی جائیداد تلاش کریں",
+        heroSubtitle: "لگژری ولاز، اپارٹمنٹس اور دفاتر – بہترین لسٹنگ دیکھیں",
+        viewAll: "تمام جائیدادیں دیکھیں",
+        featuredTitle: "نمایاں جائیدادیں",
+        prop1Title: "پام جمیرا میں لگژری ولا",
+        prop1Desc: "4 بیڈ • 5 باتھ • 4500 مربع فٹ",
+        prop2Title: "ڈاؤن ٹاؤن میں جدید اپارٹمنٹ",
+        prop2Desc: "2 بیڈ • 2 باتھ • 1200 مربع فٹ",
+        prop3Title: "دبئی مرینا میں پریمیم دفتر",
+        prop3Desc: "اوپن اسپیس • 3 باتھ رومز • 2000 مربع فٹ"
+      }
+    };
+
+    function setLang(lang) {
+      document.body.style.direction = (lang === 'ar' || lang === 'ur') ? 'rtl' : 'ltr';
+      document.getElementById('hero-title').textContent = translations[lang].heroTitle;
+      document.getElementById('hero-subtitle').textContent = translations[lang].heroSubtitle;
+      document.getElementById('view-all-btn').textContent = translations[lang].viewAll;
+      document.getElementById('featured-title').textContent = translations[lang].featuredTitle;
+      document.getElementById('prop1-title').textContent = translations[lang].prop1Title;
+      document.getElementById('prop1-desc').textContent = translations[lang].prop1Desc;
+      document.getElementById('prop2-title').textContent = translations[lang].prop2Title;
+      document.getElementById('prop2-desc').textContent = translations[lang].prop2Desc;
+      document.getElementById('prop3-title').textContent = translations[lang].prop3Title;
+      document.getElementById('prop3-desc').textContent = translations[lang].prop3Desc;
+    }
+  </script>
+
+</body>
+</html>
