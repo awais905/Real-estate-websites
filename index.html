@@ -1,202 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dubai Properties</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    * {margin:0; padding:0; box-sizing:border-box; font-family: 'Poppins', sans-serif;}
-    body {background:#0e0e0e; color:#fff; transition:0.3s; direction:ltr;}
-    a {text-decoration:none; color:inherit;}
-    img {max-width:100%; display:block;}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dubai Real Estate</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif;}
+body{background:#0e0e0e; color:#fff; transition:0.3s; direction:ltr;}
+a{text-decoration:none; color:inherit;}
+img{max-width:100%; display:block;}
 
-    /* Header */
-    header {
-      padding:20px 50px;
-      display:flex; justify-content:space-between; align-items:center;
-      background: rgba(15,15,15,0.95);
-      backdrop-filter: blur(5px);
-      position: sticky; top:0; z-index: 10;
-    }
-    .logo {font-size:1.8rem; font-weight:700; color:#ffd966;}
-    nav a {margin-left:25px; font-weight:500; color:#fff; transition:0.3s;}
-    nav a:hover {color:#ffd966;}
-    .lang-switch button {
-      background: linear-gradient(45deg,#ffb400,#e0a000);
-      color:#000;
-      padding:6px 14px;
-      border-radius:6px;
-      margin-left:5px;
-      font-weight:bold;
-      cursor:pointer;
-      transition:0.3s;
-    }
-    .lang-switch button:hover {opacity:0.9;}
+/* Header */
+header{
+  padding:20px 50px;
+  display:flex; justify-content:space-between; align-items:center;
+  background: rgba(15,15,15,0.95);
+  backdrop-filter: blur(5px);
+  position: sticky; top:0; z-index:10;
+}
+.logo{font-size:1.8rem; font-weight:700; color:#ffd966;}
+nav a{margin-left:25px; font-weight:500; color:#fff; transition:0.3s;}
+nav a:hover{color:#ffd966;}
+.lang-switch button{
+  background: linear-gradient(45deg,#ffb400,#e0a000);
+  color:#000;
+  padding:6px 14px;
+  border-radius:6px;
+  margin-left:5px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+.lang-switch button:hover{opacity:0.9;}
 
-    /* Hero Section */
-    .hero {
-      height:80vh;
-      background: url('https://images.unsplash.com/photo-1571066819554-d4a03a1b67b7?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      position: relative;
-      display:flex; align-items:center; justify-content:center; text-align:center;
-    }
-    .hero::after {
-      content:'';
-      position:absolute; top:0; left:0; width:100%; height:100%;
-      background: rgba(0,0,0,0.6);
-    }
-    .hero div {
-      position: relative; z-index:2;
-      max-width:900px;
-    }
-    .hero h1 {font-size:3.5rem; color:#ffd966; text-shadow:2px 2px 10px #000;}
-    .hero p {font-size:1.3rem; color:#ddd; margin-top:10px;}
-    .view-all {
-      padding:12px 30px;
-      background: linear-gradient(45deg,#ffb400,#e0a000);
-      border-radius:8px;
-      font-weight:600;
-      margin-top:20px;
-      display:inline-block;
-      transition:0.3s;
-    }
-    .view-all:hover {opacity:0.9;}
+/* Hero Section */
+.hero{
+  height:80vh;
+  background:url('https://images.unsplash.com/photo-1571066819554-d4a03a1b67b7?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  position: relative;
+  display:flex; align-items:center; justify-content:center; text-align:center;
+}
+.hero::after{
+  content:'';
+  position:absolute; top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.6);
+}
+.hero div{position: relative; z-index:2; max-width:900px;}
+.hero h1{font-size:3.5rem; color:#ffd966; text-shadow:2px 2px 10px #000;}
+.hero p{font-size:1.3rem; color:#ddd; margin-top:10px;}
+.view-all{
+  padding:12px 30px;
+  background: linear-gradient(45deg,#ffb400,#e0a000);
+  border-radius:8px;
+  font-weight:600;
+  margin-top:20px;
+  display:inline-block;
+  transition:0.3s;
+}
+.view-all:hover{opacity:0.9;}
 
-    /* Sections */
-    .section {padding:60px 50px;}
-    .section h2 {font-size:2rem; margin-bottom:40px; color:#ffd966;}
+/* Sections */
+.section{padding:60px 50px;}
+.section h2{font-size:2rem; margin-bottom:40px; color:#ffd966;}
 
-    /* Properties Cards */
-    .properties {
-      display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px;
-    }
-    .property-card {
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(10px);
-      border-radius:15px;
-      overflow:hidden;
-      transition:0.4s;
-      cursor:pointer;
-      box-shadow:0 8px 24px rgba(0,0,0,0.5);
-    }
-    .property-card:hover {
-      transform:scale(1.03);
-      box-shadow:0 12px 30px rgba(255,180,0,0.6);
-    }
-    .property-card img {height:200px; object-fit:cover;}
-    .property-info {padding:15px;}
-    .property-info h3 {font-size:1.2rem; margin-bottom:10px; color:#ffd966;}
-    .property-info p {color:#ccc; margin-bottom:10px;}
-    .property-info .price {font-size:1.2rem; font-weight:bold; color:#ffd966;}
+/* Property Cards */
+.properties{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px;
+}
+.property-card{
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border-radius:15px;
+  overflow:hidden;
+  transition:0.4s;
+  cursor:pointer;
+  box-shadow:0 8px 24px rgba(0,0,0,0.5);
+}
+.property-card:hover{
+  transform:scale(1.03);
+  box-shadow:0 12px 30px rgba(255,180,0,0.6);
+}
+.property-card img{height:200px; object-fit:cover;}
+.property-info{padding:15px;}
+.property-info h3{font-size:1.2rem; margin-bottom:10px; color:#ffd966;}
+.property-info p{color:#ccc; margin-bottom:10px;}
+.property-info .price{font-size:1.2rem; font-weight:bold; color:#ffd966;}
 
-    /* Footer */
-    footer {background:#121212; text-align:center; padding:20px; color:#aaa; margin-top:50px;}
-  </style>
+/* Locations Section */
+.locations{
+  display:flex;
+  overflow-x:auto;
+  gap:20px;
+  padding-bottom:20px;
+}
+.locations::-webkit-scrollbar{
+  height:8px;
+}
+.locations::-webkit-scrollbar-thumb{
+  background:#ffd966; border-radius:4px;
+}
+.location-card{
+  min-width:250px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border-radius:15px;
+  overflow:hidden;
+  cursor:pointer;
+  flex-shrink:0;
+  transition:0.3s;
+}
+.location-card:hover{transform:scale(1.05);}
+.location-card img{height:150px; object-fit:cover;}
+.location-card p{text-align:center; padding:10px; font-weight:600; color:#ffd966;}
+
+/* Footer */
+footer{background:#121212; text-align:center; padding:20px; color:#aaa; margin-top:50px;}
+</style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="logo">Dubai Properties</div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Properties</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-      <span class="lang-switch">
-        <button onclick="setLang('en')">EN</button>
-        <button onclick="setLang('ar')">AR</button>
-        <button onclick="setLang('ur')">UR</button>
-      </span>
-    </nav>
-  </header>
+<!-- Header -->
+<header>
+  <div class="logo">Dubai Real Estate</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Properties</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <span class="lang-switch">
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('ar')">AR</button>
+      <button onclick="setLang('ur')">UR</button>
+    </span>
+  </nav>
+</header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div>
-      <h1 id="hero-title">Find Your Dream Property in Dubai</h1>
-      <p id="hero-subtitle">Luxury Villas, Apartments & Offices – Explore the Best Listings</p>
-      <a href="#" class="view-all" id="view-all-btn">View All Properties</a>
-    </div>
-  </section>
+<!-- Hero Section -->
+<section class="hero">
+  <div>
+    <h1 id="hero-title">Find Your Dream Property in Dubai</h1>
+    <p id="hero-subtitle">Luxury Villas, Apartments & Offices – Explore the Best Listings</p>
+    <a href="#" class="view-all" id="view-all-btn">View All Properties</a>
+  </div>
+</section>
 
-  <!-- Featured Properties -->
-  <section class="section">
-    <h2 id="featured-title">Featured Properties</h2>
-    <div class="properties">
-      <div class="property-card">
-        <img src="https://images.unsplash.com/photo-1600607682192-3c1b30c88b1b?auto=format&fit=crop&w=400&q=80" alt="Property">
-        <div class="property-info">
-          <h3 id="prop1-title">Luxury Villa in Palm Jumeirah</h3>
-          <p id="prop1-desc">4 Beds • 5 Baths • 4500 sq ft</p>
-          <p class="price">AED 12,000,000</p>
-        </div>
-      </div>
-      <div class="property-card">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" alt="Property">
-        <div class="property-info">
-          <h3 id="prop2-title">Modern Apartment Downtown</h3>
-          <p id="prop2-desc">2 Beds • 2 Baths • 1200 sq ft</p>
-          <p class="price">AED 3,500,000</p>
-        </div>
-      </div>
-      <div class="property-card">
-        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=400&q=80" alt="Property">
-        <div class="property-info">
-          <h3 id="prop3-title">Premium Office Space Dubai Marina</h3>
-          <p id="prop3-desc">Open Space • 3 Bathrooms • 2000 sq ft</p>
-          <p class="price">AED 8,000,000</p>
-        </div>
+<!-- Featured Properties -->
+<section class="section">
+  <h2 id="featured-title">Featured Properties</h2>
+  <div class="properties">
+    <div class="property-card">
+      <img src="https://images.unsplash.com/photo-1600607682192-3c1b30c88b1b?auto=format&fit=crop&w=400&q=80" alt="Property">
+      <div class="property-info">
+        <h3 id="prop1-title">Luxury Villa in Palm Jumeirah</h3>
+        <p id="prop1-desc">4 Beds • 5 Baths • 4500 sq ft</p>
+        <p class="price">AED 12,000,000</p>
       </div>
     </div>
-  </section>
+    <div class="property-card">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" alt="Property">
+      <div class="property-info">
+        <h3 id="prop2-title">Modern Apartment Downtown</h3>
+        <p id="prop2-desc">2 Beds • 2 Baths • 1200 sq ft</p>
+        <p class="price">AED 3,500,000</p>
+      </div>
+    </div>
+    <div class="property-card">
+      <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=400&q=80" alt="Property">
+      <div class="property-info">
+        <h3 id="prop3-title">Premium Office Space Dubai Marina</h3>
+        <p id="prop3-desc">Open Space • 3 Bathrooms • 2000 sq ft</p>
+        <p class="price">AED 8,000,000</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    &copy; 2025 Dubai Properties. All rights reserved.
-  </footer>
+<!-- Dubai Locations Section -->
+<section class="section">
+  <h2 id="locations-title">Explore Dubai Locations</h2>
+  <div class="locations">
+    <div class="location-card">
+      <img src="https://images.unsplash.com/photo-1587166107731-c6f88dff95e0?auto=format&fit=crop&w=400&q=80" alt="Palm Jumeirah">
+      <p id="loc1">Palm Jumeirah</p>
+    </div>
+    <div class="location-card">
+      <img src="https://images.unsplash.com/photo-1594850457555-53d1f93760a3?auto=format&fit=crop&w=400&q=80" alt="Downtown Dubai">
+      <p id="loc2">Downtown Dubai</p>
+    </div>
+    <div class="location-card">
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=400&q=80" alt="Dubai Marina">
+      <p id="loc3">Dubai Marina</p>
+    </div>
+    <div class="location-card">
+      <img src="https://images.unsplash.com/photo-1590663601406-5f3f3a63c1f4?auto=format&fit=crop&w=400&q=80" alt="Jumeirah Beach">
+      <p id="loc4">Jumeirah Beach</p>
+    </div>
+  </div>
+</section>
 
-  <!-- Language Script -->
-  <script>
-    const translations = {
-      en: {
-        heroTitle: "Find Your Dream Property in Dubai",
-        heroSubtitle: "Luxury Villas, Apartments & Offices – Explore the Best Listings",
-        viewAll: "View All Properties",
-        featuredTitle: "Featured Properties",
-        prop1Title: "Luxury Villa in Palm Jumeirah",
-        prop1Desc: "4 Beds • 5 Baths • 4500 sq ft",
-        prop2Title: "Modern Apartment Downtown",
-        prop2Desc: "2 Beds • 2 Baths • 1200 sq ft",
-        prop3Title: "Premium Office Space Dubai Marina",
-        prop3Desc: "Open Space • 3 Bathrooms • 2000 sq ft"
-      },
-      ar: {
-        heroTitle: "ابوظہبی میں اپنے خوابوں کی جائیداد تلاش کریں",
-        heroSubtitle: "لگژری ولاز، اپارٹمنٹس اور دفاتر – بہترین فہرستیں دیکھیں",
-        viewAll: "تمام جائیدادیں دیکھیں",
-        featuredTitle: "نمایاں جائیدادیں",
-        prop1Title: "پام جمیرا میں لگژری ولا",
-        prop1Desc: "4 بیڈ • 5 باتھ • 4500 مربع فٹ",
-        prop2Title: "ڈاؤن ٹاؤن میں جدید اپارٹمنٹ",
-        prop2Desc: "2 بیڈ • 2 باتھ • 1200 مربع فٹ",
-        prop3Title: "دبئی مرینا میں پریمیم دفتر",
-        prop3Desc: "اوپن اسپیس • 3 باتھ رومز • 2000 مربع فٹ"
-      },
-      ur: {
-        heroTitle: "دبئی میں اپنے خوابوں کی جائیداد تلاش کریں",
-        heroSubtitle: "لگژری ولاز، اپارٹمنٹس اور دفاتر – بہترین لسٹنگ دیکھیں",
-        viewAll: "تمام جائیدادیں دیکھیں",
-        featuredTitle: "نمایاں جائیدادیں",
-        prop1Title: "پام جمیرا میں لگژری ولا",
-        prop1Desc: "4 بیڈ • 5 باتھ • 4500 مربع فٹ",
-        prop2Title: "ڈاؤن ٹاؤن میں جدید اپارٹمنٹ",
-        prop2Desc: "2 بیڈ • 2 باتھ • 1200 مربع فٹ",
-        prop3Title: "دبئی مرینا میں پریمیم دفتر",
-        prop3Desc: "اوپن اسپیس • 3 باتھ رومز • 2000 مربع فٹ"
-      }
-    };
+<footer>
+  &copy; 2025 Dubai Real Estate. All rights reserved.
+</footer>
 
-    function setLang(lang) {
-      document.body.style.direction = (lang === 'ar' || lang === 'ur') ? 'rtl' : 'ltr';
-      document.getElementById('hero-title').textContent = translations[lang].heroTitle
+<!-- Language Script -->
+<script>
+const translations={
+  en:{
+    heroTitle:"Find Your Dream Property in Dubai",
+    heroSubtitle:"Luxury Villas, Apartments & Offices – Explore the Best Listings",
+    viewAll:"View All Properties",
+    featuredTitle:"Featured Properties",
+    prop1Title:"Luxury Villa in Palm Jumeirah",
+    prop1Desc:"4 Beds • 5 Baths • 4500 sq ft",
+    prop2Title:"Modern Apartment Downtown",
+    prop2Desc:"2 Beds • 2 Baths • 1200 sq ft",
+    prop3Title:"Premium Office Space Dubai Marina",
+    prop3Desc:"Open Space • 3 Bathrooms • 2000 sq ft",
+    locationsTitle:"Explore Dubai Locations",
+    loc1:"Palm Jumeirah",
+    loc2:"Downtown Dubai",
+    loc3:"Dubai Marina",
+    loc4:"Jumeirah Beach"
+  },
+  ar:{
+    heroTitle:"ابوظہبی میں اپنے خوابوں کی جائیداد
