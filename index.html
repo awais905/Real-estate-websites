@@ -37,7 +37,7 @@
     /* Hero Section */
     .hero {
       height:80vh;
-      background: url('https://source.unsplash.com/1600x900/?dubai,luxury,realestate') center/cover no-repeat;
+      background: url('https://images.unsplash.com/photo-1571066819554-d4a03a1b67b7?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       position: relative;
       display:flex; align-items:center; justify-content:center; text-align:center;
     }
@@ -126,7 +126,7 @@
     <h2 id="featured-title">Featured Properties</h2>
     <div class="properties">
       <div class="property-card">
-        <img src="https://source.unsplash.com/400x300/?dubai,villa" alt="Property">
+        <img src="https://images.unsplash.com/photo-1600607682192-3c1b30c88b1b?auto=format&fit=crop&w=400&q=80" alt="Property">
         <div class="property-info">
           <h3 id="prop1-title">Luxury Villa in Palm Jumeirah</h3>
           <p id="prop1-desc">4 Beds • 5 Baths • 4500 sq ft</p>
@@ -134,7 +134,7 @@
         </div>
       </div>
       <div class="property-card">
-        <img src="https://source.unsplash.com/400x300/?dubai,apartment" alt="Property">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" alt="Property">
         <div class="property-info">
           <h3 id="prop2-title">Modern Apartment Downtown</h3>
           <p id="prop2-desc">2 Beds • 2 Baths • 1200 sq ft</p>
@@ -142,7 +142,7 @@
         </div>
       </div>
       <div class="property-card">
-        <img src="https://source.unsplash.com/400x300/?dubai,office" alt="Property">
+        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=400&q=80" alt="Property">
         <div class="property-info">
           <h3 id="prop3-title">Premium Office Space Dubai Marina</h3>
           <p id="prop3-desc">Open Space • 3 Bathrooms • 2000 sq ft</p>
@@ -199,18 +199,4 @@
 
     function setLang(lang) {
       document.body.style.direction = (lang === 'ar' || lang === 'ur') ? 'rtl' : 'ltr';
-      document.getElementById('hero-title').textContent = translations[lang].heroTitle;
-      document.getElementById('hero-subtitle').textContent = translations[lang].heroSubtitle;
-      document.getElementById('view-all-btn').textContent = translations[lang].viewAll;
-      document.getElementById('featured-title').textContent = translations[lang].featuredTitle;
-      document.getElementById('prop1-title').textContent = translations[lang].prop1Title;
-      document.getElementById('prop1-desc').textContent = translations[lang].prop1Desc;
-      document.getElementById('prop2-title').textContent = translations[lang].prop2Title;
-      document.getElementById('prop2-desc').textContent = translations[lang].prop2Desc;
-      document.getElementById('prop3-title').textContent = translations[lang].prop3Title;
-      document.getElementById('prop3-desc').textContent = translations[lang].prop3Desc;
-    }
-  </script>
-
-</body>
-</html>
+      document.getElementById('hero-title').textContent = translations[lang].heroTitle
